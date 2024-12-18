@@ -1,0 +1,8 @@
+{
+  "response": {
+    "code": "invalid_param",
+    "message": "query is required in input form",
+    "status": 400
+  },
+  "timestamp": "2024-12-18T02:54:28.835Z"
+}
