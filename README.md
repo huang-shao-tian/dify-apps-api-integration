@@ -1,40 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Dify API Integration
 
-## Getting Started
+A Next.js application that integrates with the Dify API to process messages and store responses locally.
 
-First, run the development server:
+## Features
+
+- Integration with local Dify API
+- Local storage of API responses
+- TypeScript support
+- Simple and clean UI
+- Error handling
+- Environment variable configuration
+
+## Prerequisites
+
+- Node.js 16.x or higher
+- pnpm
+- Local Dify container running
+- Dify API key
+
+## Quick Start
+
+1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/dify-api-integration.git
+cd dify-api-integration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Configure environment variables
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Create a `.env.local` file in the root directory:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# .env.local
+DIFY_API_KEY=your-dify-api-key-here
+```
 
-## Learn More
+To get your Dify API key:
+1. Access your local Dify application
+2. Go to API Access section
+3. Copy the API key
+4. Paste it in your `.env.local` file
 
-To learn more about Next.js, take a look at the following resources:
+4. Create required directories
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+```bash
+mkdir data
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. Start the development server
 
-## Deploy on Vercel
+```bash
+pnpm dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application will be available at `http://localhost:3000`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+dify-api-integration/
+├── data/              # Stored API responses
+├── lib/               # Utility functions
+├── pages/             # Page components
+│   ├── api/          # API routes
+│   └── index.tsx     # Main page
+├── types/            # TypeScript definitions
+├── .env.local        # Environment variables
+├── package.json
+└── tsconfig.json
+```
+
+## API Integration
+
+The application integrates with a local Dify API instance. Make sure your Dify container is running and accessible at the configured URL.
+
+Default API endpoint: `http://localhost:5001/v1/completion-messages`
+
+## Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| DIFY_API_KEY | Your Dify API key | Yes |
+
+## Development
+
+To start development:
+
+1. Ensure all prerequisites are met
+2. Configure environment variables
+3. Run the development server
+4. Make changes to the code
+5. Test your changes
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+--
+
+## Support
+
+For support, please open an issue in the GitHub repository.
